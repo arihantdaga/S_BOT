@@ -40,7 +40,12 @@ void bt_serial_loop(){
                 else if (DIR.equals("STOP"))
                 {       Serial.println("Stopping");
                         Stop();
+                }else if(DIR.equals("LINE")){
+                        Serial.println("Will Follow Line Now");
+                        delay(2000);
+                        setup_follow_line();
+                        run_follow_line();
+                        Serial.println("Line Follower Ended");
                 }
         }
-
 }
