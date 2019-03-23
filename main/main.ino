@@ -42,7 +42,19 @@ void setup()
         #ifdef COLOR_SENSOR_SUPPORT
         color_sensor_setup();
         #endif
+        #ifdef ULTRASONIC_SENSOR_SUPPORT
         ultrasonic_sensor_setup();
+        #endif
+        #ifdef LED_SUPPORT
+        led_setup();
+        #endif
+        #ifdef OLED_SUPPORT
+        oled_setup();
+        #endif
+
+        #ifdef SERVO_SUPPORT
+        servo_setup();
+        #endif
 }
 void loop()
 {
@@ -60,6 +72,22 @@ void loop()
         #endif
         #ifdef COLOR_SENSOR_SUPPORT
         color_sensor_loop();
+        #endif
+
+        #ifdef ULTRASONIC_SENSOR_SUPPORT
+        ultrasonic_sensor_loop();
+        #endif
+
+        #ifdef LED_SUPPORT
+        led_loop();
+        #endif
+
+        #ifdef OLED_SUPPORT
+        oled_loop();
+        #endif
+
+        #ifdef SERVO_SUPPORT
+        servo_loop();
         #endif
 
         //  display.drawString(0, 0, "Hello World");
